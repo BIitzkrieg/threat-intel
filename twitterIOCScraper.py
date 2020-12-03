@@ -21,7 +21,7 @@ for tweet in user:
     #print(tweet.full_text)
     #adjust to "true" for "unsafe" ioc's
     for ioc in iocextract.extract_iocs(str(tweet.full_text), refang=False):
-        if re.match(r"(?!https://t\.co)", str(ioc)):
+        if re.match(r"(?!https:\/\/t\.co|127\.0\.0\.1)", str(ioc)):
             #print(ioc)
             iocList.append(ioc)
 
